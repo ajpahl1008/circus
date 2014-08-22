@@ -1,4 +1,4 @@
-package com.pahlsoft.circus.dao;
+package com.pahlsoft.circus.jpa;
 
 import javax.persistence.*;
 
@@ -6,11 +6,11 @@ import javax.persistence.*;
  * Created by aj on 8/21/14.
  */
 @Entity
-@Table(name = "RELATIONSHIPS_SKILLS", schema = "", catalog = "circus")
-public class RelationshipsSkillsEntity {
+@Table(name = "RELATIONSHIPS_INTERESTS", schema = "", catalog = "circus")
+public class RelationshipsInterestsEntity {
     private int relationshipId;
+    private int interestsId;
     private int attendeeId;
-    private int skillsId;
 
     @Id
     @Column(name = "RELATIONSHIP_ID", nullable = false, insertable = true, updatable = true)
@@ -23,6 +23,16 @@ public class RelationshipsSkillsEntity {
     }
 
     @Basic
+    @Column(name = "INTERESTS_ID", nullable = false, insertable = true, updatable = true)
+    public int getInterestsId() {
+        return interestsId;
+    }
+
+    public void setInterestsId(int interestsId) {
+        this.interestsId = interestsId;
+    }
+
+    @Basic
     @Column(name = "ATTENDEE_ID", nullable = false, insertable = true, updatable = true)
     public int getAttendeeId() {
         return attendeeId;
@@ -32,26 +42,16 @@ public class RelationshipsSkillsEntity {
         this.attendeeId = attendeeId;
     }
 
-    @Basic
-    @Column(name = "SKILLS_ID", nullable = false, insertable = true, updatable = true)
-    public int getSkillsId() {
-        return skillsId;
-    }
-
-    public void setSkillsId(int skillsId) {
-        this.skillsId = skillsId;
-    }
-
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
 
-        RelationshipsSkillsEntity that = (RelationshipsSkillsEntity) o;
+        RelationshipsInterestsEntity that = (RelationshipsInterestsEntity) o;
 
         if (attendeeId != that.attendeeId) return false;
+        if (interestsId != that.interestsId) return false;
         if (relationshipId != that.relationshipId) return false;
-        if (skillsId != that.skillsId) return false;
 
         return true;
     }
@@ -59,8 +59,8 @@ public class RelationshipsSkillsEntity {
     @Override
     public int hashCode() {
         int result = relationshipId;
+        result = 31 * result + interestsId;
         result = 31 * result + attendeeId;
-        result = 31 * result + skillsId;
         return result;
     }
 }

@@ -1,4 +1,4 @@
-package com.pahlsoft.circus.dao;
+package com.pahlsoft.circus.jpa;
 
 import javax.persistence.Basic;
 import javax.persistence.Column;
@@ -9,10 +9,10 @@ import javax.persistence.Table;
  * Created by aj on 8/21/14.
  */
 @Entity
-@Table(name = "attendee_interests", schema = "", catalog = "circus")
-public class AttendeeInterestsEntity {
+@Table(name = "attendee_skills", schema = "", catalog = "circus")
+public class AttendeeSkillsEntity {
     private int attendeeId;
-    private String interestDescription;
+    private String skill;
 
     @Basic
     @Column(name = "ATTENDEE_ID", nullable = false, insertable = true, updatable = true)
@@ -25,13 +25,13 @@ public class AttendeeInterestsEntity {
     }
 
     @Basic
-    @Column(name = "INTEREST_DESCRIPTION", nullable = false, insertable = true, updatable = true, length = 45)
-    public String getInterestDescription() {
-        return interestDescription;
+    @Column(name = "SKILL", nullable = false, insertable = true, updatable = true, length = 45)
+    public String getSkill() {
+        return skill;
     }
 
-    public void setInterestDescription(String interestDescription) {
-        this.interestDescription = interestDescription;
+    public void setSkill(String skill) {
+        this.skill = skill;
     }
 
     @Override
@@ -39,11 +39,10 @@ public class AttendeeInterestsEntity {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
 
-        AttendeeInterestsEntity that = (AttendeeInterestsEntity) o;
+        AttendeeSkillsEntity that = (AttendeeSkillsEntity) o;
 
         if (attendeeId != that.attendeeId) return false;
-        if (interestDescription != null ? !interestDescription.equals(that.interestDescription) : that.interestDescription != null)
-            return false;
+        if (skill != null ? !skill.equals(that.skill) : that.skill != null) return false;
 
         return true;
     }
@@ -51,7 +50,7 @@ public class AttendeeInterestsEntity {
     @Override
     public int hashCode() {
         int result = attendeeId;
-        result = 31 * result + (interestDescription != null ? interestDescription.hashCode() : 0);
+        result = 31 * result + (skill != null ? skill.hashCode() : 0);
         return result;
     }
 }

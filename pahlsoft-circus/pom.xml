@@ -24,7 +24,7 @@
   </dependencies>
   <modules>
     <module>pahlsoft-circus-qr</module>
-    <module>pahlsoft-circus-dao</module>
+    <module>pahlsoft-circus-jpa</module>
     <module>pahlsoft-circus-ws</module>
     <module>pahlsoft-circus-war</module>
     <module>pahlsoft-circus-web</module>

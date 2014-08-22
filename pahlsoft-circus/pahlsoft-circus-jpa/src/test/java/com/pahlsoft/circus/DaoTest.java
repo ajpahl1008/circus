@@ -1,7 +1,7 @@
 package com.pahlsoft.circus;
 
 import com.pahlsoft.circus.builder.QRBuilder;
-import com.pahlsoft.circus.dao.AttendeeEntity;
+import com.pahlsoft.circus.jpa.AttendeeEntity;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 

@@ -1,6 +1,6 @@
 package com.pahlsoft.circus;
 
-import com.pahlsoft.circus.dao.*;
+import com.pahlsoft.circus.jpa.*;
 
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;

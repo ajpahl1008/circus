@@ -1,4 +1,4 @@
-package com.pahlsoft.circus.dao;
+package com.pahlsoft.circus.jpa;
 
 import javax.persistence.*;
 import java.util.Arrays;

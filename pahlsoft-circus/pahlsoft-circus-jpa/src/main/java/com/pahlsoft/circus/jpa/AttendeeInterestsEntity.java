@@ -1,24 +1,27 @@
-package com.pahlsoft.circus.dao;
+package com.pahlsoft.circus.jpa;
 
-import javax.persistence.*;
+import javax.persistence.Basic;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Table;
 
 /**
  * Created by aj on 8/21/14.
  */
 @Entity
-@Table(name = "INTERESTS", schema = "", catalog = "circus")
-public class InterestsEntity {
-    private int interestsId;
+@Table(name = "attendee_interests", schema = "", catalog = "circus")
+public class AttendeeInterestsEntity {
+    private int attendeeId;
     private String interestDescription;
 
-    @Id
-    @Column(name = "INTERESTS_ID", nullable = false, insertable = true, updatable = true)
-    public int getInterestsId() {
-        return interestsId;
+    @Basic
+    @Column(name = "ATTENDEE_ID", nullable = false, insertable = true, updatable = true)
+    public int getAttendeeId() {
+        return attendeeId;
     }
 
-    public void setInterestsId(int interestsId) {
-        this.interestsId = interestsId;
+    public void setAttendeeId(int attendeeId) {
+        this.attendeeId = attendeeId;
     }
 
     @Basic
@@ -36,9 +39,9 @@ public class InterestsEntity {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
 
-        InterestsEntity that = (InterestsEntity) o;
+        AttendeeInterestsEntity that = (AttendeeInterestsEntity) o;
 
-        if (interestsId != that.interestsId) return false;
+        if (attendeeId != that.attendeeId) return false;
         if (interestDescription != null ? !interestDescription.equals(that.interestDescription) : that.interestDescription != null)
             return false;
 
@@ -47,7 +50,7 @@ public class InterestsEntity {
 
     @Override
     public int hashCode() {
-        int result = interestsId;
+        int result = attendeeId;
         result = 31 * result + (interestDescription != null ? interestDescription.hashCode() : 0);
         return result;
     }

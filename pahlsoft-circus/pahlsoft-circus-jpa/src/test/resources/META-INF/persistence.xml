@@ -3,14 +3,14 @@
 
     <persistence-unit name="PersistenceUnitTest">
         <provider>org.apache.openjpa.persistence.PersistenceProviderImpl</provider>
-        <class>com.pahlsoft.circus.dao.AttendeeEntity</class>
-        <class>com.pahlsoft.circus.dao.InterestsEntity</class>
-        <class>com.pahlsoft.circus.dao.RelationshipsInterestsEntity</class>
-        <class>com.pahlsoft.circus.dao.RelationshipsSkillsEntity</class>
-        <class>com.pahlsoft.circus.dao.SkillsEntity</class>
-        <class>com.pahlsoft.circus.dao.VendorEntity</class>
-        <class>com.pahlsoft.circus.dao.AttendeeInterestsEntity</class>
-        <class>com.pahlsoft.circus.dao.AttendeeSkillsEntity</class>
+        <class>com.pahlsoft.circus.jpa.AttendeeEntity</class>
+        <class>com.pahlsoft.circus.jpa.InterestsEntity</class>
+        <class>com.pahlsoft.circus.jpa.RelationshipsInterestsEntity</class>
+        <class>com.pahlsoft.circus.jpa.RelationshipsSkillsEntity</class>
+        <class>com.pahlsoft.circus.jpa.SkillsEntity</class>
+        <class>com.pahlsoft.circus.jpa.VendorEntity</class>
+        <class>com.pahlsoft.circus.jpa.AttendeeInterestsEntity</class>
+        <class>com.pahlsoft.circus.jpa.AttendeeSkillsEntity</class>
         <properties>
             <property name="openjpa.jdbc.SynchronizeMappings" value="buildSchema(ForeignKeys=true)"/>
             <property name="openjpa.ConnectionURL" value="jdbc:derby:memory:circus;create=true"/>
