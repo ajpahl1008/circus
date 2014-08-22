@@ -28,7 +28,5 @@
     <module>pahlsoft-circus-ws</module>
     <module>pahlsoft-circus-war</module>
     <module>pahlsoft-circus-web</module>
-    <module>pahlsoft-circus-dao</module>
-    <module>pahlsoft-circus-tc</module>
   </modules>
 </project>
