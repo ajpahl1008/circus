@@ -1,38 +1,58 @@
 package com.pahlsoft.circus;
 
-import junit.framework.Test;
-import junit.framework.TestCase;
-import junit.framework.TestSuite;
 
-/**
- * Unit test for simple App.
- */
-public class AppTest 
-    extends TestCase
+import com.pahlsoft.circus.jpa.AttendeeEntity;
+import com.sun.jersey.api.client.Client;
+import com.sun.jersey.api.client.ClientResponse;
+import com.sun.jersey.api.client.WebResource;
+import com.sun.jersey.api.client.config.ClientConfig;
+import com.sun.jersey.api.client.config.DefaultClientConfig;
+
+import com.sun.jersey.api.json.JSONConfiguration;
+import org.apache.openjpa.lib.meta.SourceTracker;
+import org.testng.TestNG;
+import org.testng.annotations.BeforeTest;
+import org.testng.annotations.Test;
+
+import javax.ws.rs.core.MediaType;
+
+public class AppTest extends TestNG
 {
-    /**
-     * Create the test case
-     *
-     * @param testName name of the test case
-     */
-    public AppTest( String testName )
-    {
-        super( testName );
+    Client client;
+    ClientConfig clientConfig;
+    WebResource webResource;
+    ClientResponse clientResponse;
+
+    @BeforeTest
+    private void init() {
+        clientConfig = new DefaultClientConfig();
+        clientConfig.getFeatures().put(JSONConfiguration.FEATURE_POJO_MAPPING, Boolean.TRUE);
+        client = Client.create(clientConfig);
+        webResource = client.resource("http://localhost:8080/pahlsoft-circus-ws/json/attendee/post/attendee");
+
     }
 
-    /**
-     * @return the suite of tests being tested
-     */
-    public static Test suite()
-    {
-        return new TestSuite( AppTest.class );
+    @Test
+    public void testAttendeeEntityCreation() {
+        AttendeeEntity attendeeEntity = new AttendeeEntity();
+        //attendeeEntity.setAttendeeId();
+        attendeeEntity.setFirstName("Steve");
+        attendeeEntity.setLastName("Douchebag");
+        attendeeEntity.setEmailAddress("stevedbag@gmail.com");
+        attendeeEntity.setShortDesc("I'm a total jerk, you should hire me");
+        attendeeEntity.setTitle("VP");
+        attendeeEntity.setQrcode(null);
+        attendeeEntity.setResume(null);
+
+        clientResponse = webResource.accept(MediaType.APPLICATION_JSON_TYPE).type(MediaType.APPLICATION_JSON_TYPE)
+                .post(ClientResponse.class, attendeeEntity);
+
+        String output = clientResponse.getEntity(String.class);
+        System.out.println("Client Output: " + output);
     }
 
-    /**
-     * Rigourous Test :-)
-     */
-    public void testApp()
-    {
-        assertTrue( true );
-    }
+   
 }
+
+
+

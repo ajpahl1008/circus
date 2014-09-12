@@ -29,15 +29,15 @@ public class CircusDaoImpl implements CircusDao {
     }
 
     @Override
-    public List<String> getAttendeeSkills(int attendeeId) {
+    public List<SkillsEntity> getAttendeeSkills(int attendeeId) {
         Query query = em.createQuery("select a.skill from AttendeeSkillsEntity a where a.attendeeId = " + attendeeId);
-        return (List<String>) query.getResultList();
+        return (List<SkillsEntity>) query.getResultList();
     }
 
     @Override
-    public List<String> getAttendeeInterests(int attendeeId) {
+    public List<InterestsEntity> getAttendeeInterests(int attendeeId) {
         Query query = em.createQuery("select a.interestDescription from AttendeeInterestsEntity a where a.attendeeId =" + attendeeId);
-        return (List<String>) query.getResultList();
+        return (List<InterestsEntity>) query.getResultList();
     }
 
     @Override
@@ -57,4 +57,24 @@ public class CircusDaoImpl implements CircusDao {
         Query query = em.createQuery("select a from SkillsEntity a ");
         return (List<SkillsEntity>) query.getResultList();
     }
+
+    @Override
+    public AttendeeEntity addAttendee(AttendeeEntity attendee) {
+       em.persist(attendee);
+       return attendee;
+   }
+
+    @Override
+    public InterestsEntity addInterests(InterestsEntity interest) {
+       em.persist(interest);
+        return interest;
+    }
+
+    @Override
+    public SkillsEntity addSkills(SkillsEntity skill) {
+        em.persist(skill);
+        return skill;
+    }
+
+
 }

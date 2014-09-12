@@ -76,7 +76,7 @@ public class CircusService {
     @Path("/get/interests/{param}")
     @Produces("application/json")
     public Response getAttendeeInterests(@PathParam("param") int attendeeId) {
-        List<String> attendeeInterestsEntities =  circusDao.getAttendeeInterests(attendeeId);
+        List<InterestsEntity> attendeeInterestsEntities =  circusDao.getAttendeeInterests(attendeeId);
         return Response.status(200).entity(attendeeInterestsEntities).build();
     }
 
@@ -92,14 +92,31 @@ public class CircusService {
     @Path("/get/skills/{param}")
     @Produces("application/json")
     public Response getAttendeeSkills(@PathParam("param") int attendeeId) {
-        List<String> attendeeSkillsEntities =  circusDao.getAttendeeSkills(attendeeId);
+        List<SkillsEntity> attendeeSkillsEntities =  circusDao.getAttendeeSkills(attendeeId);
         return Response.status(200).entity(attendeeSkillsEntities).build();
     }
     @POST
-    @Path("/post")
+    @Path("/post/attendee")
     @Consumes("application/json")
-    public Response createProductInJSON(AttendeeEntity product) {
-        String result = "Product created : " + product;
+    public Response createAttendeeInJSON(AttendeeEntity attendee) {
+       AttendeeEntity result = circusDao.addAttendee(attendee);
+        return Response.status(201).entity(result).build();
+    }
+
+    @POST
+    @Path("/post/skills")
+    @Consumes("application/json")
+    public Response createSkillInJSON(SkillsEntity skill) {
+        SkillsEntity result = circusDao.addSkills(skill);
+        return Response.status(201).entity(result).build();
+    }
+
+    @POST
+    @Path("/post/interests")
+    @Consumes("application/json")
+    public Response createInterestInJSON(InterestsEntity interest) {
+        InterestsEntity result = circusDao.addInterests(interest);
+        if (interest == null) return Response.status(405).entity(result).build();
         return Response.status(201).entity(result).build();
     }
 

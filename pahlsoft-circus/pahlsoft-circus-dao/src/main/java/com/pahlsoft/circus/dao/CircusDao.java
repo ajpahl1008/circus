@@ -10,11 +10,17 @@ import java.util.List;
 public interface CircusDao {
     // Specific
     public List<AttendeeEntity> getAttendeeInfo(int attendeeId);
-    public List<String> getAttendeeSkills(int attendeeId);
-    public List<String> getAttendeeInterests(int attendeeId);
+    public List<InterestsEntity> getAttendeeInterests(int attendeeId);
+    public List<SkillsEntity> getAttendeeSkills(int attendeeId);
 
     // All Items
     public List<AttendeeEntity> getAllAttendees();
     public List<InterestsEntity> getAllInterests();
     public List<SkillsEntity> getAllSkills();
+
+    // Inserters
+    public AttendeeEntity addAttendee(AttendeeEntity attendee);
+    public InterestsEntity addInterests(InterestsEntity interest);
+    public SkillsEntity addSkills(SkillsEntity skill);
+
 }
