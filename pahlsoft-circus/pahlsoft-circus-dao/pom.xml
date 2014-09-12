@@ -10,18 +10,93 @@
   <groupId>com.pahlsoft.circus</groupId>
   <artifactId>pahlsoft-circus-dao</artifactId>
   <version>1.0-SNAPSHOT</version>
-  <name>pahlsoft-circus-dao</name>
-   <packaging>jar</packaging>
+  <name>Circus Dao Module</name>
   <url>http://maven.apache.org</url>
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
   </properties>
   <dependencies>
     <dependency>
-      <groupId>junit</groupId>
-      <artifactId>junit</artifactId>
-      <version>3.8.1</version>
+      <groupId>org.testng</groupId>
+      <artifactId>testng</artifactId>
+      <version>6.1.1</version>
       <scope>test</scope>
     </dependency>
-  </dependencies>
+      <dependency>
+          <groupId>javax.ejb</groupId>
+          <artifactId>javax.ejb-api</artifactId>
+          <version>3.2</version>
+      </dependency>
+
+      <dependency>
+          <groupId>org.apache.openjpa</groupId>
+          <artifactId>openjpa</artifactId>
+          <version>2.2.2</version>
+      </dependency>
+      <dependency>
+          <groupId>org.apache.openjpa</groupId>
+          <artifactId>openjpa-all</artifactId>
+          <version>2.0.0</version>
+      </dependency>
+      <dependency>
+          <groupId>net.sourceforge.serp</groupId>
+          <artifactId>serp</artifactId>
+          <version>1.14.1</version>
+      </dependency>
+      <dependency>
+          <groupId>javax</groupId>
+          <artifactId>javaee-api</artifactId>
+          <version>7.0</version>
+      </dependency>
+      <dependency>
+          <groupId>mysql</groupId>
+          <artifactId>mysql-connector-java</artifactId>
+          <version>5.1.28</version>
+      </dependency>
+      <dependency>
+          <groupId>org.jipijapa</groupId>
+          <artifactId>jipijapa-openjpa</artifactId>
+          <version>1.0.0.Final</version>
+    </dependency>
+      <dependency>
+          <groupId>org.apache.derby</groupId>
+          <artifactId>derbyclient</artifactId>
+          <version>10.10.1.1</version>
+          <scope>test</scope>
+      </dependency>
+      <dependency>
+          <groupId>org.apache.derby</groupId>
+          <artifactId>derbytools</artifactId>
+          <version>10.10.1.1</version>
+          <scope>test</scope>
+      </dependency>
+      <dependency>
+          <groupId>org.apache.derby</groupId>
+          <artifactId>derby</artifactId>
+          <version>10.10.1.1</version>
+          <scope>test</scope>
+      </dependency><dependency>
+      <groupId>org.apache.derby</groupId>
+      <artifactId>derbynet</artifactId>
+      <version>10.10.1.1</version>
+      <scope>test</scope>
+  </dependency>
+ </dependencies>
+<repositories>
+    <repository>
+        <id>jboss-3rd-party-releases</id>
+        <url>https://repository.jboss.org/nexus/content/repositories/thirdparty-releases/</url>
+    </repository>
+</repositories>
+    <build>
+        <plugins>
+            <plugin>
+                <artifactId>maven-ejb-plugin</artifactId>
+                <version>2.3</version>
+                <configuration>
+                    <ejbVersion>3.2</ejbVersion>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
 </project>

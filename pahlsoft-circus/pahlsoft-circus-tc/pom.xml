@@ -10,7 +10,7 @@
   <groupId>com.pahlsoft.circus</groupId>
   <artifactId>pahlsoft-circus-tc</artifactId>
   <version>1.0-SNAPSHOT</version>
-  <name>pahlsoft-circus-tc</name>
+  <name>Circus Transactional Component Module</name>
   <packaging>jar</packaging>
   <url>http://maven.apache.org</url>
   <properties>
