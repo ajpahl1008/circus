@@ -1,8 +1,8 @@
-CREATE DATABASE  IF NOT EXISTS `circus` /*!40100 DEFAULT CHARACTER SET utf8 */;
-USE `circus`;
+CREATE DATABASE  IF NOT EXISTS `CIRCUS` /*!40100 DEFAULT CHARACTER SET utf8 */;
+USE `CIRCUS`;
 -- MySQL dump 10.13  Distrib 5.6.13, for osx10.6 (i386)
 --
--- Host: 127.0.0.1    Database: circus
+-- Host: 127.0.0.1    Database: CIRCUS
 -- ------------------------------------------------------
 -- Server version	5.6.17
 
@@ -30,6 +30,16 @@ CREATE TABLE `INTERESTS` (
   PRIMARY KEY (`INTERESTS_ID`)
 ) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `INTERESTS`
+--
+
+LOCK TABLES `INTERESTS` WRITE;
+/*!40000 ALTER TABLE `INTERESTS` DISABLE KEYS */;
+INSERT INTO `INTERESTS` VALUES (1,'WATER SKIING'),(2,'HIKING'),(3,'SURFING'),(4,'CODING'),(5,'WATCHING TV');
+/*!40000 ALTER TABLE `INTERESTS` ENABLE KEYS */;
+UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
 /*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
@@ -40,4 +50,4 @@ CREATE TABLE `INTERESTS` (
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2014-08-21 22:18:42
+-- Dump completed on 2014-09-15 17:07:47

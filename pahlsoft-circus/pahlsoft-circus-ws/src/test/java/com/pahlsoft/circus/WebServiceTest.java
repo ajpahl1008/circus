@@ -62,8 +62,6 @@ public class WebServiceTest extends TestNG
         clientResponse = webResource.accept(MediaType.APPLICATION_JSON_TYPE).type(MediaType.APPLICATION_JSON_TYPE)
                 .post(ClientResponse.class, attendeeEntity);
 
-//        String output = clientResponse.getEntity(String.class);
-//        System.out.println("Client Output: " + output);
     }
 
    

@@ -1,8 +1,8 @@
-CREATE DATABASE  IF NOT EXISTS `circus` /*!40100 DEFAULT CHARACTER SET utf8 */;
-USE `circus`;
+CREATE DATABASE  IF NOT EXISTS `CIRCUS` /*!40100 DEFAULT CHARACTER SET utf8 */;
+USE `CIRCUS`;
 -- MySQL dump 10.13  Distrib 5.6.13, for osx10.6 (i386)
 --
--- Host: 127.0.0.1    Database: circus
+-- Host: 127.0.0.1    Database: CIRCUS
 -- ------------------------------------------------------
 -- Server version	5.6.17
 
@@ -92,4 +92,4 @@ SET character_set_client = @saved_cs_client;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2014-08-21 22:18:44
+-- Dump completed on 2014-09-15 17:07:47

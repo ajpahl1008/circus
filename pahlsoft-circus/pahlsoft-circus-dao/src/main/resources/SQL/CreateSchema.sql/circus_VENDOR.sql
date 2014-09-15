@@ -1,8 +1,8 @@
-CREATE DATABASE  IF NOT EXISTS `circus` /*!40100 DEFAULT CHARACTER SET utf8 */;
-USE `circus`;
+CREATE DATABASE  IF NOT EXISTS `CIRCUS` /*!40100 DEFAULT CHARACTER SET utf8 */;
+USE `CIRCUS`;
 -- MySQL dump 10.13  Distrib 5.6.13, for osx10.6 (i386)
 --
--- Host: 127.0.0.1    Database: circus
+-- Host: 127.0.0.1    Database: CIRCUS
 -- ------------------------------------------------------
 -- Server version	5.6.17
 
@@ -28,12 +28,22 @@ CREATE TABLE `VENDOR` (
   `VENDOR_ID` int(11) NOT NULL AUTO_INCREMENT,
   `VENDOR_NAME` varchar(45) NOT NULL,
   `VENDOR_DESCRIPTION` varchar(45) NOT NULL,
-  `VENDOR_LOGO` blob NOT NULL,
+  `VENDOR_LOGO` blob,
   `VENDOR_ADDRESS` varchar(45) NOT NULL,
   `VENDOR_PHONE` varchar(45) NOT NULL,
   PRIMARY KEY (`VENDOR_ID`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `VENDOR`
+--
+
+LOCK TABLES `VENDOR` WRITE;
+/*!40000 ALTER TABLE `VENDOR` DISABLE KEYS */;
+INSERT INTO `VENDOR` VALUES (1,'PAHLSOFT','WE WRITE CODE',NULL,'1234 Awesome Way','888-555-1212');
+/*!40000 ALTER TABLE `VENDOR` ENABLE KEYS */;
+UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
 /*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
@@ -44,4 +54,4 @@ CREATE TABLE `VENDOR` (
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2014-08-21 22:18:43
+-- Dump completed on 2014-09-15 17:07:47
